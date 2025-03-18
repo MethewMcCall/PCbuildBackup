@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - TechForge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">TechForge</a>
+                <ul class="nav-links">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="builder.html"><i class="fas fa-tools"></i> PC Builder</a></li>
+                    <li><a href="forum.html"><i class="fas fa-users"></i> Community</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-user"></i> Dashboard</a></li>
+                    <li>
+                        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cartCount">0🛒</span></a>
+                       
+                       </li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a id="profileLink" href="login.html">Login</a></li>  
+                </ul>
+                <button id="darkModeToggle" class="btn">Toggle Dark Mode</button>
+                <button id="logoutBtn" class="btn" style="display: none;">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Checkout</h1>
+            <form id="checkoutForm">
+                <h2>Shipping Details</h2>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="text" id="address" placeholder="Address" required>
+                <input type="text" id="city" placeholder="City" required>
+                <input type="text" id="postalCode" placeholder="Postal Code" required>
+                <input type="text" id="contactNumber" placeholder="Contact Number" required>
+
+                <h2>Payment Method</h2>
+                <select id="paymentMethod" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="googlePay">Google Pay</option>
+                    <option value="applePay">Apple Pay</option>
+                    <option value="cardPay">Credit/Debit Card</option>
+                </select>
+
+                <h2>Order Summary</h2>
+                <div id="checkoutItems"></div>
+                <h3>Total Price: $<span id="totalCheckoutPrice">0.00</span></h3>
+
+                <button type="submit" class="btn" id="completeCheckout" disabled>Complete Purchase</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechForge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/checkout.js"></script>
+    <script>
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            document.getElementById('completeCheckout').disabled = this.value === "";
+        });
+    </script>
+</body>
+</html>

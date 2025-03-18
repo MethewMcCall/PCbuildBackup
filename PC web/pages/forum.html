@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum - TechForge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">TechForge</a>
+                <ul class="nav-links">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="builder.html"><i class="fas fa-tools"></i> PC Builder</a></li>
+                    <li><a href="forum.html"><i class="fas fa-users"></i> Community</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-user"></i> Dashboard</a></li>
+                    <li>
+                        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cartCount">0🛒</span></a>
+                       
+                       </li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a id="profileLink" href="login.html">Login</a></li>  
+                </ul>
+                <button id="darkModeToggle" class="btn">Toggle Dark Mode</button>
+                <button id="logoutBtn" class="btn" style="display: none;">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Community Forum</h1>
+
+        <div class="post-form">
+            <textarea id="postContent" placeholder="Share your thoughts..."></textarea>
+            <button class="btn" onclick="submitPost()">Post</button>
+        </div>
+
+        <div id="forumPosts"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechForge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/forum.js"></script>
+</body>
+</html>

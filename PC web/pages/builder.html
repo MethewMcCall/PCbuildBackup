@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Builder - TechForge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">TechForge</a>
+                <ul class="nav-links">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="builder.html"><i class="fas fa-tools"></i> PC Builder</a></li>
+                    <li><a href="forum.html"><i class="fas fa-users"></i> Community</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-user"></i> Dashboard</a></li>
+                    <li>
+                        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cartCount">0🛒</span></a>
+                       
+                       </li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a id="profileLink" href="login.html">Login</a></li>  
+                </ul>
+                <button id="darkModeToggle" class="btn">Toggle Dark Mode</button>
+                <button id="logoutBtn" class="btn" style="display: none;">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>PC Builder</h1>
+            <p>Select your components to build your custom PC.</p>
+            
+            <div class="build-container">
+                <div class="component-selector">
+                    <h2>Select Components</h2>
+                    <button class="btn" onclick="showComponentOptions('cpu')">CPU</button>
+                    <button class="btn" onclick="showComponentOptions('gpu')">GPU</button>
+                    <button class="btn" onclick="showComponentOptions('ram')">RAM</button>
+                    <button class="btn" onclick="showComponentOptions('storage')">Storage</button>
+                    <button class="btn" onclick="showComponentOptions('motherboard')">Motherboard</button>
+                    <button class="btn" onclick="showComponentOptions('powerSupply')">Power Supply</button>
+                    <button class="btn" onclick="showComponentOptions('cooling')">Cooling</button>
+                    <button class="btn" onclick="showComponentOptions('case')">Case</button>
+                    <div id="componentOptionsContainer"></div>
+                </div>
+
+                <div class="build-preview">
+                    <h2>Current Build</h2>
+                    <div id="buildPreview" class="build-preview-list"></div>
+                    <div id="compatibilityCheck"></div>
+                    <h3>Total Price: $<span id="totalPrice">0.00</span></h3>
+                    <input type="text" id="buildName" placeholder="Enter Build Name">
+                    <button class="btn" onclick="saveBuild(document.getElementById('buildName').value)">Save Build</button>
+                    <button class="btn" onclick="addBuildToCart()">Add All to Cart</button>
+                    <button class="btn" onclick="clearBuild()">Clear Build</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechForge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/builder.js"></script>
+</body>
+</html>

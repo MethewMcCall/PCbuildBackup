@@ -1,0 +1,68 @@
+<!-- profile.html - User Profile Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TechForge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">TechForge</a>
+                <ul class="nav-links">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="builder.html"><i class="fas fa-tools"></i> PC Builder</a></li>
+                    <li><a href="forum.html"><i class="fas fa-users"></i> Community</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-user"></i> Dashboard</a></li>
+                    <li>
+                        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cartCount">0🛒</span></a>
+                       
+                       </li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a id="profileLink" href="login.html">Login</a></li>  
+                </ul>
+                <button id="darkModeToggle" class="btn">Toggle Dark Mode</button>
+                <button id="logoutBtn" class="btn" style="display: none;">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>User Profile</h1>
+        <div class="profile-section">
+            <h2>Account Information</h2>
+            <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+        </div>
+
+        <div class="profile-section">
+            <h2>Saved PC Builds</h2>
+            <ul id="savedBuildsList"></ul>
+        </div>
+
+        <div class="profile-section">
+            <h2>Wishlist</h2>
+            <ul id="wishlistItems"></ul>
+        </div>
+
+        <div class="profile-section">
+            <h2>Update Password</h2>
+            <input type="password" id="newPassword" placeholder="New Password" required>
+            <input type="password" id="confirmNewPassword" placeholder="Confirm New Password" required>
+            <button class="btn" onclick="updatePassword()">Update Password</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechForge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>

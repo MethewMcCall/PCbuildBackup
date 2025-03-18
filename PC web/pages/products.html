@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - TechForge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">TechForge</a>
+                <ul class="nav-links">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="builder.html"><i class="fas fa-tools"></i> PC Builder</a></li>
+                    <li><a href="forum.html"><i class="fas fa-users"></i> Community</a></li>
+                    <li><a href="dashboard.html"><i class="fas fa-user"></i> Dashboard</a></li>
+                    <li>
+                        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cartCount">0🛒</span></a>
+                       
+                       </li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a id="profileLink" href="login.html">Login</a></li>  
+                </ul>
+                <button id="darkModeToggle" class="btn">Toggle Dark Mode</button>
+                <button id="logoutBtn" class="btn" style="display: none;">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Explore Our Products</h1>
+
+        <!-- Filter Section -->
+        <div class="product-filters">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="cpu">🔷 Processors</option>
+                <option value="gpu">🖥️ Graphics Cards</option>
+                <option value="ram">⚡ Memory (RAM)</option>
+                <option value="storage">💾 Storage</option>
+                <option value="motherboard">🔩 Motherboards</option>
+                <option value="powerSupply">⚙️ Power Supplies</option>
+                <option value="cooling">❄️ Cooling Solutions</option>
+                <option value="case">🖥️ PC Cases</option>
+            </select>
+            <input type="text" id="searchFilter" placeholder="🔍 Search products...">
+            <button class="btn" onclick="filterProducts()">Filter</button>
+            <button class="btn" onclick="clearFilters()">Clear</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="productGrid"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechForge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/products.js"></script>
+</body>
+</html>
